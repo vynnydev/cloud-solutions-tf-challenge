@@ -1,0 +1,17 @@
+variable "aws_region" {}
+variable "vpc_id" {}
+variable "ecs_website_service_name" {}
+variable "public_subnet_id1" {}
+variable "public_subnet_id2" {}
+variable "website_load_balancer_arn" {}
+variable "website_load_balancer_dns_name" {}
+variable "ecs_task_execution_role_arn" {}
+variable "ecs_public_service_sg_id" {}
+variable "terrafarming_website_ecs_cluster_id" {}
+variable "terrafarming_website_ecs_cluster_name" {}
+variable "website_sg_id" {}
+variable "cloudwatch_log_group_website_container_name" {}
+variable "cloudwatch_log_group_website_task_definition_name" {}
+variable "acm_certificate_cert_arn" {}
+variable "route53_record_www_record_name" {}
+variable "website_efs_id" {}
