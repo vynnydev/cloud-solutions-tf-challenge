@@ -54,59 +54,55 @@ Componentes Principais
 
 Esta explicação expandida do AWS Bedrock destaca como cada modelo específico (Claude, Jurassic Mid e Stable Diffusion) é utilizado no contexto do TerraFarming, fornecendo exemplos concretos de suas aplicações na agricultura de precisão.
 
-4.  Amazon DynamoDB
+5.  Amazon DynamoDB
     -   Função: Banco de dados NoSQL altamente escalável.
     -   Uso no TerraFarming: Armazena dados não-relacionais, como informações de sensores e perfis de usuários.
 
-30. Amazon ECR
+6. Amazon ECR
     -   Função: Registro de contêineres.
     -   Uso no TerraFarming: Armazena, gerencia e implanta imagens de contêineres Docker.
 
-10. Amazon S3
-    -   Função: Armazenamento de objetos.
-    -   Uso no TerraFarming: Armazena arquivos, imagens e backups de dados.
-
-12. Amazon SNS
+7. Amazon SNS
     -   Função: Serviço de notificações.
     -   Uso no TerraFarming: Envia alertas e notificações push para os usuários.
 
-13. Amazon SES
+8. Amazon SES
     -   Função: Serviço de e-mail.
     -   Uso no TerraFarming: Envia e-mails transacionais e relatórios aos usuários.
 
-32. AWS Certificate Manager
+9. AWS Certificate Manager
     -   Função: Gerenciamento de certificados SSL/TLS.
     -   Uso no TerraFarming: Provisiona, gerencia e implanta certificados para conexões seguras.
 
-14. Amazon CloudFront
+10. Amazon CloudFront
     -   Função: Rede de entrega de conteúdo (CDN).
     -   Uso no TerraFarming: Distribui conteúdo estático e protege contra ataques DDoS.
 
-15. Amazon Route 53
+11. Amazon Route 53
     -   Função: Serviço de DNS e roteamento de tráfego.
     -   Uso no TerraFarming: Gerencia o DNS do aplicativo e implementa estratégias de failover.
 
-19. Amazon Cognito
+12. Amazon Cognito
     -   Função: Serviço de autenticação e gerenciamento de identidade.
     -   Uso no TerraFarming: Gerencia a autenticação e autorização dos usuários.
 
-20. AWS KMS
+13. AWS KMS
     -   Função: Serviço de gerenciamento de chaves.
     -   Uso no TerraFarming: Gerencia chaves de criptografia para proteger dados sensíveis.
 
-21. AWS Shield e WAF
+14. AWS Shield e WAF
     -   Função: Serviços de segurança e firewall de aplicações web.
     -   Uso no TerraFarming: Protege contra ataques DDoS e ameaças web.
 
-22. AWS Config
+15. AWS Config
     -   Função: Serviço de avaliação, auditoria e avaliação de conformidade.
     -   Uso no TerraFarming: Monitora a conformidade da configuração dos recursos AWS.
 
-23. AWS CloudTrail
+16. AWS CloudTrail
     -   Função: Serviço de auditoria e logging.
     -   Uso no TerraFarming: Registra todas as atividades da conta AWS para fins de auditoria.
 
-33. Amazon QuickSight
+17. Amazon QuickSight
     -   Função: Serviço de business intelligence.
     -   Uso no TerraFarming: Cria visualizações e dashboards interativos para análise de dados agrícolas.
 
@@ -128,11 +124,6 @@ Regras do IoT Core:
     -   Ação: Encaminha os dados para processamento via Lambda
 -   ConfiguracaoLeituraRule
     -   Permite que o agricultor configure o intervalo entre os ciclos de leitura (padrão de 2 horas)
-
-1.  Amazon S3
-
--   Bucket para armazenamento de imagens e vídeos capturados no campo
--   Bucket separado para armazenamento de dados processados e resultados de análises
 
 1.  Amazon DynamoDB
 
