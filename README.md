@@ -9,7 +9,11 @@ Este repositório contém o código para os microserviços e funções Lambda do
 
 Componentes Principais
 
-1.  AWS Lambda
+1.  AWS IoT Core
+    -   Função: Plataforma para conectar e gerenciar dispositivos IoT.
+    -   Uso no TerraFarming: Gerencia a conexão e os dados dos sensores agrícolas.
+
+2.  AWS Lambda
     -   Função: Executa código serverless para as funções de fulfillment e lógica de negócios.
     -   Uso no TerraFarming: Processa solicitações dos usuários, realiza cálculos e interage com outros serviços AWS.
 
@@ -17,71 +21,7 @@ Componentes Principais
     -   Função: Gerencia e roteia as requisições da API.
     -   Uso no TerraFarming: Direciona as solicitações dos usuários para os serviços apropriados.
 
-3.  Amazon DynamoDB
-    -   Função: Banco de dados NoSQL altamente escalável.
-    -   Uso no TerraFarming: Armazena dados não-relacionais, como informações de sensores e perfis de usuários.
-
-4.  Amazon Lex
-    -   Função: Serviço de processamento de linguagem natural e chatbot.
-    -   Uso no TerraFarming: Processa entradas de texto e voz dos usuários, identifica intenções e extrai informações relevantes.
-
-5.  Amazon SageMaker
-    -   Função: Plataforma de aprendizado de máquina.
-    -   Uso no TerraFarming: Treina e implanta modelos de ML para previsões agrícolas, análise de imagens e recomendações personalizadas.
-
-6.  AWS Rekognition
-    -   Função: Serviço de análise de imagens e vídeos.
-    -   Uso no TerraFarming: Analisa imagens de culturas para detecção de doenças, pragas e estágio de crescimento.
-
-7.  AWS IoT Core
-    -   Função: Plataforma para conectar e gerenciar dispositivos IoT.
-    -   Uso no TerraFarming: Gerencia a conexão e os dados dos sensores agrícolas.
-
-10. Amazon S3
-    -   Função: Armazenamento de objetos.
-    -   Uso no TerraFarming: Armazena arquivos, imagens e backups de dados.
-
-12. Amazon SNS
-    -   Função: Serviço de notificações.
-    -   Uso no TerraFarming: Envia alertas e notificações push para os usuários.
-
-13. Amazon SES
-    -   Função: Serviço de e-mail.
-    -   Uso no TerraFarming: Envia e-mails transacionais e relatórios aos usuários.
-
-14. Amazon CloudFront
-    -   Função: Rede de entrega de conteúdo (CDN).
-    -   Uso no TerraFarming: Distribui conteúdo estático e protege contra ataques DDoS.
-
-15. Amazon Route 53
-    -   Função: Serviço de DNS e roteamento de tráfego.
-    -   Uso no TerraFarming: Gerencia o DNS do aplicativo e implementa estratégias de failover.
-
-19. Amazon Cognito
-    -   Função: Serviço de autenticação e gerenciamento de identidade.
-    -   Uso no TerraFarming: Gerencia a autenticação e autorização dos usuários.
-
-20. AWS KMS
-    -   Função: Serviço de gerenciamento de chaves.
-    -   Uso no TerraFarming: Gerencia chaves de criptografia para proteger dados sensíveis.
-
-21. AWS Shield e WAF
-    -   Função: Serviços de segurança e firewall de aplicações web.
-    -   Uso no TerraFarming: Protege contra ataques DDoS e ameaças web.
-
-22. AWS Config
-    -   Função: Serviço de avaliação, auditoria e avaliação de conformidade.
-    -   Uso no TerraFarming: Monitora a conformidade da configuração dos recursos AWS.
-
-23. AWS CloudTrail
-    -   Função: Serviço de auditoria e logging.
-    -   Uso no TerraFarming: Registra todas as atividades da conta AWS para fins de auditoria.
-
-28. AWS Step Functions
-    -   Função: Serviço de orquestração de fluxos de trabalho.
-    -   Uso no TerraFarming: Coordena a execução de múltiplos serviços AWS em workflows complexos.
-
-29. AWS Bedrock
+3. AWS Bedrock
     -   Função: Plataforma de IA generativa que oferece acesso a múltiplos modelos de linguagem e imagem de ponta.
     -   Uso no TerraFarming: Fornece capacidades avançadas de IA para várias aplicações agrícolas.
     -   Modelos utilizados:
@@ -114,13 +54,57 @@ Componentes Principais
 
 Esta explicação expandida do AWS Bedrock destaca como cada modelo específico (Claude, Jurassic Mid e Stable Diffusion) é utilizado no contexto do TerraFarming, fornecendo exemplos concretos de suas aplicações na agricultura de precisão.
 
+4.  Amazon DynamoDB
+    -   Função: Banco de dados NoSQL altamente escalável.
+    -   Uso no TerraFarming: Armazena dados não-relacionais, como informações de sensores e perfis de usuários.
+
 30. Amazon ECR
     -   Função: Registro de contêineres.
     -   Uso no TerraFarming: Armazena, gerencia e implanta imagens de contêineres Docker.
 
+10. Amazon S3
+    -   Função: Armazenamento de objetos.
+    -   Uso no TerraFarming: Armazena arquivos, imagens e backups de dados.
+
+12. Amazon SNS
+    -   Função: Serviço de notificações.
+    -   Uso no TerraFarming: Envia alertas e notificações push para os usuários.
+
+13. Amazon SES
+    -   Função: Serviço de e-mail.
+    -   Uso no TerraFarming: Envia e-mails transacionais e relatórios aos usuários.
+
 32. AWS Certificate Manager
     -   Função: Gerenciamento de certificados SSL/TLS.
     -   Uso no TerraFarming: Provisiona, gerencia e implanta certificados para conexões seguras.
+
+14. Amazon CloudFront
+    -   Função: Rede de entrega de conteúdo (CDN).
+    -   Uso no TerraFarming: Distribui conteúdo estático e protege contra ataques DDoS.
+
+15. Amazon Route 53
+    -   Função: Serviço de DNS e roteamento de tráfego.
+    -   Uso no TerraFarming: Gerencia o DNS do aplicativo e implementa estratégias de failover.
+
+19. Amazon Cognito
+    -   Função: Serviço de autenticação e gerenciamento de identidade.
+    -   Uso no TerraFarming: Gerencia a autenticação e autorização dos usuários.
+
+20. AWS KMS
+    -   Função: Serviço de gerenciamento de chaves.
+    -   Uso no TerraFarming: Gerencia chaves de criptografia para proteger dados sensíveis.
+
+21. AWS Shield e WAF
+    -   Função: Serviços de segurança e firewall de aplicações web.
+    -   Uso no TerraFarming: Protege contra ataques DDoS e ameaças web.
+
+22. AWS Config
+    -   Função: Serviço de avaliação, auditoria e avaliação de conformidade.
+    -   Uso no TerraFarming: Monitora a conformidade da configuração dos recursos AWS.
+
+23. AWS CloudTrail
+    -   Função: Serviço de auditoria e logging.
+    -   Uso no TerraFarming: Registra todas as atividades da conta AWS para fins de auditoria.
 
 33. Amazon QuickSight
     -   Função: Serviço de business intelligence.
@@ -149,51 +133,6 @@ Regras do IoT Core:
 
 -   Bucket para armazenamento de imagens e vídeos capturados no campo
 -   Bucket separado para armazenamento de dados processados e resultados de análises
-
-
-* Funções lambda para geração de mídia:
-
-1.  Umidade do Solo:
-    -   Imagens de culturas ideais para o nível atual de umidade do solo.
-    -   Visualizações de técnicas de irrigação recomendadas (gotejamento, aspersão, etc.).
-    -   Representações de cobertura do solo adequada para reter umidade.
-
-2.  Temperatura do Solo:
-    -   Imagens de plantas que se desenvolvem bem na temperatura atual do solo.
-    -   Visualizações de técnicas de manejo do solo para regular a temperatura (mulching, cobertura vegetal).
-    -   Representações de sistemas de aquecimento/resfriamento do solo para estufas.
-
-3.  Umidade do Ar:
-    -   Imagens de culturas adaptadas às condições atuais de umidade do ar.
-    -   Visualizações de técnicas para controle de umidade (nebulização, ventilação).
-    -   Representações de estruturas de proteção contra excesso ou falta de umidade.
-
-4.  Temperatura do Ar:
-    -   Imagens de plantas resistentes à temperatura atual do ar.
-    -   Visualizações de estruturas de proteção (estufas, túneis, telas de sombreamento).
-    -   Representações de técnicas de plantio adequadas para a temperatura (consórcio, rotação).
-
-5.  Luminosidade (Sol ou Estufa):
-    -   Imagens de culturas que se desenvolvem bem no nível atual de luminosidade.
-    -   Visualizações de técnicas de manejo de luz (sistemas de iluminação artificial, telas de sombreamento).
-    -   Representações de disposições ideais de plantas para otimizar o uso da luz disponível.
-
-Para criar GIFs informativos para agricultores sobre os tópicos mencionados, podemos descrever como eles poderiam ser representados visualmente. Vou sugerir conceitos para cada tópico:
-
-1.  Umidade do Solo:
-    Um GIF mostrando um corte transversal do solo, com partículas de água se movendo. O nível de umidade poderia variar, indicando solo seco, ideal e encharcado. Uma planta poderia ser mostrada reagindo a essas mudanças.
-
-2.  Temperatura do Solo:
-    Um termômetro inserido no solo, com a temperatura variando. As cores do solo poderiam mudar de frio (azul) para quente (vermelho). Sementes ou raízes poderiam ser mostradas reagindo às mudanças de temperatura.
-
-3.  Umidade do Ar:
-    Um higrômetro simples com o ponteiro se movendo entre "seco" e "úmido". Gotas de água poderiam aparecer no ar quando a umidade aumenta, e desaparecer quando diminui.
-
-4.  Temperatura do Ar:
-    Um termômetro ao ar livre, com a temperatura subindo e descendo. O ambiente ao redor poderia mudar (por exemplo, plantas murchando com calor extremo ou geada formando-se com frio intenso).
-
-5.  Luminosidade (Sol ou Estufa):
-    Para o sol, um ciclo dia/noite com o sol se movendo no céu. Para estufa, lâmpadas de crescimento ligando e desligando. Em ambos os casos, uma planta poderia ser mostrada crescendo em resposta à luz.
 
 1.  Amazon DynamoDB
 
